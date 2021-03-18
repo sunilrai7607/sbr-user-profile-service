@@ -1,6 +1,6 @@
 package com.sbr.platform.rest.api;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

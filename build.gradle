@@ -42,6 +42,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.session:spring-session-data-redis'
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
@@ -57,6 +58,28 @@ dependencies {
     // Spock framework configuration
     testCompile("org.spockframework:spock-core:${spockFrameWorkVersion}")
     testCompile("org.spockframework:spock-spring:${spockFrameWorkVersion}")
+
+    /******************************************************
+     * mapstruct
+     ******************************************************/
+    compile group: 'org.mapstruct', name: 'mapstruct-jdk8', version: '1.2.0.Final'
+    compileOnly 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.2.0.Final'
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    /******************************************************
+     * ESAPI is an open-source web application security control library available from OWASP.
+     * Jsoup, which provides some simple cleanup functions. If we wanted more control, we could build our own regular expressions,
+     * but this might be more error-prone than using a library.
+     ******************************************************/
+    implementation group: 'org.owasp.esapi', name: 'esapi', version: '2.2.2.0'
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
+
+    /**
+     * Validation
+     */
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 dependencyManagement {

@@ -6,6 +6,6 @@ ARG version
 
 ENV version_number=$version
 
-COPY ./build/libs/sbr-user-service-$version-number.jar sbr-user-service.jar
+COPY ./build/libs/sbr-user-profile-service-$version-number.jar sbr-user-profile-service.jar
 
-ENTRYPOINT ["java","-jar","sbr-user-service.jar"]
+ENTRYPOINT ["java","-jar","sbr-user-profile-service.jar"]
