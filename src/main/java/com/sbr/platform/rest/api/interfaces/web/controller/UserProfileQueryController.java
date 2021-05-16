@@ -3,6 +3,7 @@ package com.sbr.platform.rest.api.interfaces.web.controller;
 import com.sbr.platform.rest.api.domain.mapper.UserProfileDtoMapper;
 import com.sbr.platform.rest.api.domain.service.UserProfileQueryService;
 import com.sbr.platform.rest.api.interfaces.web.model.UserResponse;
+import com.sbr.rest.core.lib.model.dto.RestResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,12 +31,12 @@ public class UserProfileQueryController {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<UserResponse> getUserById(@PathVariable("userId")
+    public ResponseEntity<RestResponseDTO<UserResponse>> getUserById(@PathVariable("userId")
                                                     @NotBlank
                                                     @Size(
                                                             max = 10,
                                                             message = "The userId '${validatedValue}' must be between {min} and {max} characters long"
                                                     ) final String userId) {
-        return ResponseEntity.ok(UserProfileDtoMapper.INSTANCE.mapToResponse(userProfileQueryService.getUserProfileById(userId)));
+        return ResponseEntity.ok(RestResponseDTO.forSuccess(UserProfileDtoMapper.INSTANCE.mapToResponse(userProfileQueryService.getUserProfileById(userId))));
     }
 }

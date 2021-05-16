@@ -1,6 +1,6 @@
 package com.sbr.platform.rest.api
 
-import com.sbr.platform.rest.api.model.response.UserResponse
+import com.sbr.platform.rest.api.interfaces.web.model.UserResponse
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
